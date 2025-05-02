@@ -1,4 +1,4 @@
-import app from './app/app.js';
+import app from './app/index.js';
 import { config } from 'dotenv';
 import knex from 'knex';
 
@@ -21,6 +21,8 @@ app.listen(port, () => console.log(`Server running on http://localhost:${port}`)
 app.get('/api/events', async (req, res) => {
     const events = await Knex('communityEvents')
         .select('*');
+
+    if (!events) return res.status(404).json({ error: 'Not found.' });
 
     return res.status(200).json(events);
 });
