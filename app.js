@@ -1,5 +1,8 @@
 import express from 'express';
 import knex from 'knex';
+import { config } from 'dotenv';
+
+config();
 
 const app = express();
 const PORT = 3000;
@@ -18,4 +21,9 @@ app.use(express.json());
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
-app.get('/api/welcome', (req, res) => res.json({ message: 'Hello world!' }));
+app.get('/api/events', async (req, res) => {
+    const settings = await Knex('communityEvents')
+        .select('*');
+
+    return res.json(settings);
+});
