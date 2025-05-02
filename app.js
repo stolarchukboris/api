@@ -22,8 +22,8 @@ app.use(express.json());
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
 app.get('/api/events', async (req, res) => {
-    const settings = await Knex('communityEvents')
+    const events = await Knex('communityEvents')
         .select('*');
 
-    return res.json(settings);
+    return res.json(events);
 });
