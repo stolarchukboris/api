@@ -1,11 +1,10 @@
-import express from 'express';
-import knex from 'knex';
+import app from './app/app.js';
 import { config } from 'dotenv';
+import knex from 'knex';
 
 config();
 
-const app = express();
-const PORT = 3000;
+const port = 3000;
 const Knex = knex({
     client: 'mysql2',
     connection: {
@@ -17,13 +16,11 @@ const Knex = knex({
     }
 });
 
-app.use(express.json());
-
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
 
 app.get('/api/events', async (req, res) => {
     const events = await Knex('communityEvents')
         .select('*');
 
-    return res.json(events);
+    return res.status(200).json(events);
 });
