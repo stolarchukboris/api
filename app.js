@@ -1,10 +1,9 @@
 import express from 'express';
-import { knex } from 'knex';
-import knex from 'knex/types';
+import knex from 'knex';
 
 const app = express();
 const PORT = 3000;
-const knex = knex({
+const Knex = knex({
     client: 'mysql2',
     connection: {
         host: process.env.DB_HOST,

@@ -5,14 +5,15 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start app.js -f",
-    "restart": "pm2 restart app.js",
+    "start": "pm2 start app.js -f && pm2 logs",
+    "restart": "pm2 restart app.js && pm2 logs",
     "stop": "pm2 delete app.js"
   },
   "author": "stolarchukboris",
   "license": "MIT",
   "dependencies": {
     "express": "^5.1.0",
-    "knex": "^3.1.0"
+    "knex": "^3.1.0",
+    "mysql2": "^3.14.1"
   }
 }
