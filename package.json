@@ -2,12 +2,12 @@
   "name": "api",
   "version": "1.0.0",
   "description": "My testing API",
-  "main": "server.js",
+  "main": "./app/index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start server.js -f && pm2 logs",
-    "restart": "pm2 restart server.js && pm2 logs",
-    "stop": "pm2 delete server.js"
+    "start": "pm2 start ./app/index.js -f && pm2 logs",
+    "restart": "pm2 restart ./app/index.js && pm2 logs",
+    "stop": "pm2 delete ./app/index.js"
   },
   "author": "stolarchukboris",
   "license": "MIT",
