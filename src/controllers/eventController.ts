@@ -2,6 +2,7 @@ import app from "../index.js";
 import handleError from '../middleware/errorHandler.js';
 import { Request, Response } from "express";
 
+// GET: Items [HttpGet] [Route("/communityEvents")]
 export async function getEvents(req: Request, res: Response) {
     try {
         const events = await app.database('communityEvents')
@@ -11,8 +12,6 @@ export async function getEvents(req: Request, res: Response) {
             res.status(404).json({ error: 'Not found.' });
             return;
         }
-
-        throw new Error;
 
         res.status(200).json(events);
     } catch (error) {
