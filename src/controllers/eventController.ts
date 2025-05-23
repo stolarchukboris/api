@@ -5,7 +5,7 @@ export async function getEvents(req: Request, res: Response) {
     const events = await app.database('communityEvents')
         .select('*');
 
-    if (!events) {
+    if (events.length === 0) {
         res.status(404).json({ error: 'Not found.' });
         return;
     }
