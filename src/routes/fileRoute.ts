@@ -1,8 +1,8 @@
 import express from 'express';
-import getEvents from '../controllers/eventController.js';
+import getFile from '../controllers/fileController.js';
 
 const router = express.Router();
 
-router.get('/', getEvents);
+router.get('/:name', getFile);
 
 export default router;

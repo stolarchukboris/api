@@ -1,7 +1,7 @@
 import app from "../index.js";
 import { Request, Response } from "express";
 
-export async function getEvents(req: Request, res: Response) {
+export default async function (req: Request, res: Response) {
     const events = await app.database('communityEvents')
         .select('*');
 
