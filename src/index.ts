@@ -2,6 +2,7 @@ import express, { Express } from 'express';
 import { config } from 'dotenv';
 import knex, { Knex } from 'knex';
 import eventRoute from './routes/eventRoute.js';
+import errorHandler from './middleware/errorHandler.js';
 
 class App {
     database: Knex;
@@ -31,7 +32,8 @@ class App {
 
         this.app.use(express.json());
         this.app.use('/api/v1/communityEvents', eventRoute);
-
+        this.app.use(errorHandler);
+        
         this.app.listen(this.port, () => console.log(`Server running on http://localhost:${this.port}`));
     }
 }
