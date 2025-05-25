@@ -32,7 +32,6 @@ class App {
         console.log('Starting the server...');
 
         this.app.use(express.json());
-        this.app.use(express.urlencoded({ extended: true }));
         this.app.use('/api/communityEvents', eventRoute);
         this.app.use('/cdn', fileRoute);
         this.app.use(errorHandler);
