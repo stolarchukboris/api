@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "My testing API",
   "main": "./app/index.js",
   "type": "module",
@@ -16,13 +16,9 @@
   "license": "MIT",
   "dependencies": {
     "@types/express": "^5.0.6",
-    "@types/swagger-jsdoc": "^6.0.4",
-    "@types/swagger-ui-express": "^4.1.8",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "knex": "^3.1.0",
-    "mysql2": "^3.16.0",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
+    "mysql2": "^3.16.0"
   }
 }
