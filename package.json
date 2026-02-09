@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/express": "^5.0.6",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "knex": "^3.1.0",
     "mysql2": "^3.16.0"
