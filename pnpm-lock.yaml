@@ -18,8 +18,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1
       knex:
-        specifier: ^3.1.0
-        version: 3.1.0(mysql2@3.16.0)
+        specifier: ^3.2.9
+        version: 3.2.9(mysql2@3.16.0)
       mysql2:
         specifier: ^3.16.0
         version: 3.16.0
@@ -249,8 +249,8 @@ packages:
   is-property@1.0.2:
     resolution: {integrity: sha512-Ks/IoX00TtClbGQr4TWXemAnktAQvYB7HzcCxDGqEZU6oCmb2INHuOoKxbtR+HFkmYWBKv/dOZtGRiAjDhj92g==}
 
-  knex@3.1.0:
-    resolution: {integrity: sha512-GLoII6hR0c4ti243gMs5/1Rb3B+AjwMOfjYm97pu0FOQa7JH56hgBxYf5WK2525ceSbBY1cjeZ9yk99GPMB6Kw==}
+  knex@3.2.9:
+    resolution: {integrity: sha512-dtAILTjBMaG8YloP5oBxohDIKyIsdQ/TkcVvSjhsksvsjeH63Y0PADyuMDfNZKbVT3Rlx3vEYVBlecbPT/KerA==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
@@ -259,6 +259,7 @@ packages:
       mysql2: '*'
       pg: '*'
       pg-native: '*'
+      pg-query-stream: ^4.14.0
       sqlite3: '*'
       tedious: '*'
     peerDependenciesMeta:
@@ -272,13 +273,15 @@ packages:
         optional: true
       pg-native:
         optional: true
+      pg-query-stream:
+        optional: true
       sqlite3:
         optional: true
       tedious:
         optional: true
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+  lodash@4.18.1:
+    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
   long@5.3.2:
     resolution: {integrity: sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==}
@@ -373,8 +376,8 @@ packages:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
     engines: {node: '>=8'}
 
-  resolve@1.22.10:
-    resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
+  resolve@1.22.11:
+    resolution: {integrity: sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==}
     engines: {node: '>= 0.4'}
     hasBin: true
 
@@ -695,7 +698,7 @@ snapshots:
 
   is-property@1.0.2: {}
 
-  knex@3.1.0(mysql2@3.16.0):
+  knex@3.2.9(mysql2@3.16.0):
     dependencies:
       colorette: 2.0.19
       commander: 10.0.1
@@ -705,7 +708,7 @@ snapshots:
       get-package-type: 0.1.0
       getopts: 2.3.0
       interpret: 2.2.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       pg-connection-string: 2.6.2
       rechoir: 0.8.0
       resolve-from: 5.0.0
@@ -716,7 +719,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  lodash@4.17.21: {}
+  lodash@4.18.1: {}
 
   long@5.3.2: {}
 
@@ -794,11 +797,11 @@ snapshots:
 
   rechoir@0.8.0:
     dependencies:
-      resolve: 1.22.10
+      resolve: 1.22.11
 
   resolve-from@5.0.0: {}
 
-  resolve@1.22.10:
+  resolve@1.22.11:
     dependencies:
       is-core-module: 2.16.1
       path-parse: 1.0.7
