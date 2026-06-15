@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 
 export default function (error: any, req: Request, res: Response, next: any) {
     console.error(error);

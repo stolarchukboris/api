@@ -1,5 +1,5 @@
 import express from 'express';
-import getFile from '../controllers/fileController.js';
+import getFile from '../controllers/fileController.ts';
 
 const router = express.Router();
 

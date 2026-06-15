@@ -1,13 +1,11 @@
-import express, { Express } from 'express';
-import { config } from 'dotenv';
+import express, { type Express } from 'express';
 import knex, { Knex } from 'knex';
-import eventRoute from './routes/eventRoute.js';
-import fileRoute from './routes/fileRoute.js';
-import errorHandler from './middleware/errorHandler.js';
+import eventRoute from './routes/eventRoute.ts';
+import fileRoute from './routes/fileRoute.ts';
+import errorHandler from './middleware/errorHandler.ts';
 
 class App {
     database: Knex;
-    env = config().parsed || {};
     app: Express;
     port = 3000;
 
@@ -21,11 +19,11 @@ class App {
         this.database = knex({
             client: 'mysql2',
             connection: {
-                host: this.env.DB_HOST,
-                port: parseInt(this.env.DB_PORT, 10),
-                user: this.env.DB_USER,
-                password: this.env.DB_PASS,
-                database: this.env.DB_NAME
+                host: Bun.env.DB_HOST,
+				port: parseInt(Bun.env.DB_PORT as string, 10),
+				user: Bun.env.DB_USER,
+				password: Bun.env.DB_PASS,
+				database: Bun.env.DB_NAME
             }
         });
 

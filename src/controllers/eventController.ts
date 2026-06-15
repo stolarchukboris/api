@@ -1,14 +1,10 @@
-import app from "../index.js";
-import { Request, Response } from "express";
+import app from "../index.ts";
+import type { Request, Response } from "express";
 
 export default async function (req: Request, res: Response) {
-    const events = await app.database('communityEvents')
-        .select('*');
+    const events = await app.database('communityEvents').select('*');
 
-    if (events.length === 0) {
-        res.status(404).json({ error: 'Not found.' });
-        return;
-    }
+    if (events.length === 0) return res.status(404).json({ error: 'Not found.' });
 
     res.status(200).json(events);
 }
